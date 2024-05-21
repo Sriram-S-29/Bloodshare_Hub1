@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <title>ADMIN CAMP DETAILS</title>
+    <link rel="stylesheet" type="text/css" href="/Public/css/admincamp.css" />
+</head>
+
+<body>
+    <div class="hed">
+        <p>Total Donors : {{C_Tot}} &nbsp;&nbsp;&nbsp;&nbsp; |</p>&nbsp;
+    </div><br>
+    <div class="redbox">
+        <div>
+            <img class="himg" src="/Public/img/logonew.png" alt="logo" />
+        </div>
+        <div class="l">
+            <a href="/admin/adminhome">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Camp</button>
+                <div class="dropdown-content">
+                    <a href="/admin/admincamp">New</a>
+                    <a href="/admin/adminCampDetail">Details</a>
+                
+                </div>
+            </div>
+            <a href="/admin/adminDonor">Donor</a>
+            <div class="dropdown">
+                <button class="dropbtn">Request </button>
+                <div class="dropdown-content">
+                    <a href="/admin/adminRequest">New </a>
+                    <a href="/admin/adminRequestManage">Manage </a>
+                    <a href="/admin/admincampdetail"> Details</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Appointment </button>
+                <div class="dropdown-content">
+                    <a href="/admin/appointment">Manage</a>
+                    <a href="#"> Details</a>
+                </div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <img class="himg" src="/Public/img/h2.png" alt="profile">
+            <div class="dropdown-content">
+                 <a href="/admin/inventory">Inventery</a>
+                <a href="/admin/">Logout</a>
+            </div>
+
+
+        </div>
+    </div>
+
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>District</th>
+            <th>Place</th>
+            <th>Phno</th>
+            <th>Morning Count</th>
+            <th>Afternoon Count</th>
+            <th>Evening Count</th>
+
+            <th></th>
+        </tr>
+        {{#each camp}}
+        <tr>
+            <td>{{this.date}}</td>
+            <td>{{this.district}}</td>
+            <td style="width: 300px; height: 200px;">
+                <iframe src="{{this.place}}" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+            </td>
+            <td>{{this.phno}}</td>
+            <td>{{this.morningCount}}</td>
+            <td>{{this.afternoonCount}}</td>
+            <td>{{this.eveningCount}}</td>
+
+        </tr>
+        {{/each}}
+    </table>
+
+
+
+</html>

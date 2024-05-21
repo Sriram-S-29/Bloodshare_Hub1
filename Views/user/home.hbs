@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="/Public/css/home.css" />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+    <div class="hed">
+        <p>Total Donors : {{C_Tot}} &nbsp;&nbsp;&nbsp;&nbsp; |</p>&nbsp;
+        <p>Total Donors in your District : {{C_dis}}</p>
+    </div><br>
+    <div class="redbox">
+        <div>
+            <img class="himg" src="/Public/img/logonew.png" alt="logo" />
+        </div>
+        <div class="l">
+            <nav>
+                <a id="now" href="/home">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/appointment">Appointment</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/response">Respond</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/camp">Camp</a>
+
+            </nav>
+        </div>
+        <div class="profile">
+            <img src="/Public/img/profile.png" alt="profile">
+            <div class="dropdown">
+                <a href="/profile">Profile</a>
+                <a href="/status"> My blood</a>
+                <a href="/">Logout</a>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="poster-container">
+        <div class="poster"><img class="i" src="/Public/img/3.png" alt="Poster 3"></div>
+        <div class="poster"><img class="i" src="/Public/img/1.png" alt="Poster 1"></div>
+        <div class="poster"><img class="i" src="/Public/img/2.png" alt="Poster 2"></div>
+
+
+    </div>
+    </div>
+    {{!-- <footer class="foot">
+        &copy; Code by Sriram
+    </footer> --}}
+
+    <script>
+        
+        let status = JSON.parse('{{status}}')
+        if (status) {
+            function sweet() {
+                console.log("OK seet")
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 5000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.onmouseenter = Swal.stopTimer;
+                        toast.onmouseleave = Swal.resumeTimer;
+                    }
+                });
+                Toast.fire({
+                    icon: "success",
+                    title: "Signed in successfully"
+                });
+            }
+            sweet();
+        }
+            else
+            {
+                function sweet() {
+                console.log("OK seet")
+                const Toasts = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.onmouseenter = Swal.stopTimer;
+                        toast.onmouseleave = Swal.resumeTimer;
+                    }
+                });
+                Toasts.fire({
+                    icon: "success",
+                    title: "Registered successfully "
+                });
+            }
+             sweet();
+            
+        }
+
+
+    </script>
+
+</html>

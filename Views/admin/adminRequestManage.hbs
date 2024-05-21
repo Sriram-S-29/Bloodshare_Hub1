@@ -1,0 +1,157 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet" />
+  <title>Home</title>
+  <link rel="stylesheet" href="/Public/css/adminrequestManage.css" />
+</head>
+
+<body>
+  {{#if msg}}
+  <script>alert('{{msg}}')</script>
+  {{/if}}
+  <div class="hed">
+    <p>Total Donors : {{C_Tot}} &nbsp;&nbsp;&nbsp;&nbsp; |</p>&nbsp;
+  </div><br>
+  <div class="redbox">
+    <div>
+      <img class="himg" src="/Public/img/logonew.png" alt="logo" />
+    </div>
+    <div class="l">
+      <a href="/admin/adminhome">Home</a>
+      <div class="dropdown">
+        <button class="dropbtn">Camp</button>
+        <div class="dropdown-content">
+          <a href="/admin/admincamp">New</a>
+          <a href="/admin/adminCampDetail">Details</a>
+        </div>
+      </div>
+      <a href="/admin/adminDonor">Donor</a>
+      <div class="dropdown">
+        <button class="dropbtn">Request </button>
+        <div class="dropdown-content">
+          <a href="/admin/adminRequest">New </a>
+          <a href="/admin/adminRequestManage">Manage </a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Appointment </button>
+        <div class="dropdown-content">
+          <a href="/admin/appointment">Manage</a>
+          <a href="#"> Details</a>
+        </div>
+      </div>
+    </div>
+    <div class="dropdown">
+      <img class="himg" src="/Public/img/h2.png" alt="profile">
+      <div class="dropdown-content">
+         <a href="/admin/inventory">Inventery</a>
+        <a href="/admin/">Logout</a>
+      </div>
+
+
+    </div>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        {{! <th>Date_Needed</th> }}
+        <th>Hospital name</th>
+        <th>Address</th>
+        <th>District</th>
+        <th>Pateint Id</th>
+        <th>Phone Number</th>
+        <th>Purpose</th>
+        <th>Blood Group</th>
+        <th>Donor</th>
+        <th>Remove</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      {{#each donor}}
+      <form method="post" action="/admin/requestDelete/{{this.id}}">
+        <tr>
+          {{!-- <td>{{this.date_need}}</td> --}}
+          <td>{{this.H_name}}</td>
+          <td>{{this.H_address}}</td>
+          <td>{{this.H_district}}</td>
+          <td>{{this.P_id}}</td>
+          <td>{{this.phno}}</td>
+          <td>{{this.purpose}}</td>
+          <td>{{this.blood_group}}</td>
+          {{#if this.response_id}}
+          <td><a href="/admin/detailsOfHero/{{this.id}}" onclick="view( )">View</a></td>
+          {{else}}
+          <td>No Donor</td>
+          {{/if}}
+          <td><input class="deleteb" type="submit" value="Delete" /></td>
+        </tr>
+      </form>
+      <div>
+
+      </div>
+      {{/each}}
+    </tbody>
+  </table>
+  <div id="myModal" class="modal">
+    
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h1>Details of Donor</h1>
+      <div class="aligndiv">
+        <div>
+      <p id="pcolor">Name : <span id="heroName"></span></p>
+      <p id="pcolor">Phone Number: <span id="heroPhone"></span></p>
+      <p id="pcolor">Blood_group : <span id="heroBlood"></span></p>
+      <p id="pcolor">E-mail :<span id="heroMail"></span></p>
+      <p id="pcolor">District : <span id="heroDistrict"></span></p>
+      </div> 
+       <div>
+      <img id="profile-photo" src="" alt="Profile Photo">
+
+    </div>     
+    </div>
+      </div>
+      
+   
+  </div>
+
+  {{#if detailsOfHero}}
+  <script>
+    const modal = document.getElementById('myModal');
+    const span = document.getElementsByClassName('close')[0];
+    const heroName = document.getElementById('heroName');
+    const heroPhone = document.getElementById('heroPhone');
+    const heroBlood = document.getElementById('heroBlood');
+    const heroMail = document.getElementById('heroMail');
+    const heroDistrict = document.getElementById('heroDistrict');
+    heroName.innerText = "{{detailsOfHero.name}}";
+    heroPhone.innerText = "{{detailsOfHero.phno}}";
+    heroBlood.innerText = "{{detailsOfHero.bloodGroup}}";
+    heroDistrict.innerText = "{{detailsOfHero.district}}";
+    heroMail.innerText = "{{detailsOfHero.email}}";
+    document.getElementById("profile-photo").src = "../../Public/img/uploaded-images/{{detailsOfHero.image}}";
+    modal.style.display = "block";
+    span.onclick = function () {
+      modal.style.display = "none";
+    }
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+  {{/if}}
+
+  {{!
+  <script src="/script/adminRequestManage.js"></script> }}
+
+</body>
+
+</html>

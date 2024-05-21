@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="/Public/css/adminrequest.css" />
+</head>
+
+<body>
+     <div class="hed">
+        <p>Total Donors : {{C_Tot}} &nbsp;&nbsp;&nbsp;&nbsp; |</p>&nbsp;
+    </div><br>
+    <div class="redbox">
+        <div>
+            <img class="himg" src="/Public/img/logonew.png" alt="logo" />
+        </div>
+        <div class="l">
+            <a href="/admin/adminhome">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Camp</button>
+                <div class="dropdown-content">
+                    <a href="/admin/admincamp">New</a>
+                    <a href="/admin/adminCampDetail">Details</a>
+                </div>
+            </div>
+            <a href="/admin/adminDonor">Donor</a>
+            <div class="dropdown">
+                <button class="dropbtn">Request </button>
+                <div class="dropdown-content">
+                    <a href="/admin/adminRequest">New </a>
+                    <a href="/admin/adminRequestManage">Manage </a>
+                </div>
+            </div>
+             <div class="dropdown">
+                <button class="dropbtn">Appointment </button>
+                <div class="dropdown-content">
+                    <a href="/admin/appointment">Manage</a>
+                    <a href="#"> Details</a>
+                </div>
+            </div>
+            </div>
+            <div class="dropdown">
+                <img  class="himg" src="/Public/img/h2.png" alt="profile">
+                <div class="dropdown-content">
+                  <a href="/admin/inventory">Inventery</a>
+                 <a href="/admin/">Logout</a>
+                 </div>
+            
+            
+        </div>
+    </div>
+</div>
+ <div class="container">
+        <h2>Request Donor Form</h2>
+        <form class="simple" action="/admin/adminRequestDonor" method="post">
+            <div class="form-group">
+                <label >Hospital Name</label>
+                <input type="text" id="H_name" name="H_name" required>
+            </div>
+            <div class="form-group">
+                <label >Hospital Address</label>
+                <input type="text" id="H_address" name="H_address" required>
+            </div>
+            <div class="form-group">
+                <label >District</label>
+                <input type="text" id="H_district" name="H_district" required>
+            </div>
+            <div class="form-group">
+                <label >Patient id</label>
+                <input type="text" id="P_id" name="P_id" required>
+            </div>
+            <div class="form-group">
+                <label >Phone Number</label>
+                <input type="tel" id="phno" name="phno" required>
+            </div>
+            <div class="form-group">
+                <label >Date Needed</label>
+                <input type="date" id="date" name="date_need" required>
+            </div>
+            <div class="form-group">
+                <label >Blood Group Needed</label>
+                <select id="blood-group" name="blood_group" required>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                </select>
+            </div>
+            <div class="form-group" style="text-align: center;">
+                <input type="submit" value="Submit Request">
+            </div>
+        </form>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,612 @@
+* {
+  color: #9f190c;
+  font-family: "Rubik", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+p {
+  color: #3c3b3b;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-right: 1%;
+  font-weight: 370;
+}
+
+body {
+  background-color: #89848451;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-image: linear-gradient(
+      216deg,
+      rgba(20, 19, 19, 0.2) 0%,
+      rgba(20, 19, 19, 0.2) 25%,
+      rgba(16, 14, 14, 0.11) 25%,
+      rgba(16, 14, 14, 0.11) 38%,
+      rgba(223, 223, 223, 0.05) 38%,
+      rgba(223, 223, 223, 0.05) 75%,
+      rgba(18, 15, 15, 0.05) 75%,
+      rgba(18, 15, 15, 0.05) 100%
+    ),
+    linear-gradient(
+      44deg,
+      rgba(128, 128, 128, 0.05) 0%,
+      rgba(128, 128, 128, 0.05) 34%,
+      rgba(5, 5, 5, 0.05) 34%,
+      rgba(5, 5, 5, 0.05) 57%,
+      rgba(25, 25, 25, 0.05) 57%,
+      rgba(25, 25, 25, 0.05) 89%,
+      rgba(12, 11, 11, 0.05) 89%,
+      rgba(12, 11, 11, 0.05) 100%
+    ),
+    linear-gradient(
+      241deg,
+      rgba(5, 5, 5, 0.05) 0%,
+      rgba(5, 5, 5, 0.05) 14%,
+      rgba(209, 209, 209, 0.05) 14%,
+      rgba(209, 209, 209, 0.05) 60%,
+      rgba(30, 24, 24, 0.05) 60%,
+      rgba(30, 24, 24, 0.05) 69%,
+      rgba(20, 19, 19, 0.2) 69%,
+      rgba(20, 19, 19, 0.2) 100%
+    ),
+    linear-gradient(
+      249deg,
+      rgba(12, 11, 11, 0.05) 0%,
+      rgba(12, 11, 11, 0.05) 32%,
+      rgba(148, 148, 148, 0.16) 32%,
+      rgba(148, 148, 148, 0.16) 35%,
+      rgba(202, 202, 202, 0.05) 35%,
+      rgba(202, 202, 202, 0.05) 51%,
+      rgba(181, 181, 181, 0.05) 51%,
+      rgba(181, 181, 181, 0.05) 100%
+    ),
+    linear-gradient(92deg, rgb(255, 255, 255), rgb(255, 255, 255));
+}
+
+.hed {
+  margin: -1% 0;
+  background-color: #8b80801e;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  box-shadow: 1px 2px 0px rgba(109, 95, 95, 0.664);
+}
+
+.redbox {
+  display: flex;
+  position: sticky;
+  top: 0;
+  justify-content: space-between;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 4px 4px 8px rgba(5, 1, 1, 0.664);
+}
+
+.redbox img {
+  width: 100px;
+  margin: 0px;
+  box-shadow: 4px 4px 8px rgba(5, 1, 1, 0.664);
+}
+
+.himg {
+  border-radius: 50%;
+  width: 10%;
+}
+
+.l {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logout {
+  display: flex;
+  background-color: #df0a0a;
+  align-items: center;
+  width: 10%;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 600;
+  color: rgb(106, 100, 100);
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: larger;
+}
+
+#logout {
+  background-color: #9f190c;
+  color: beige;
+}
+
+a:hover {
+  text-shadow: 2px 2px 4px rgb(149, 139, 138);
+}
+
+.poster-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1200px;
+}
+
+.poster {
+  flex: 10% 0 30%;
+  margin: 10px;
+}
+
+.poster img {
+  max-width: 100%;
+  min-width: 100%;
+  height: 90%;
+  margin-top: -3%;
+}
+
+.foot {
+  display: flex;
+  justify-content: center;
+  background-color: #e91c1cd0;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.sticky-box {
+  cursor: pointer;
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background-color: #f1f1f1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  font-size: 18px;
+  border: none;
+  outline: none;
+  color: rgb(106, 100, 100);
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  padding: 14px 20px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: 0;
+}
+
+.dropdown-content a {
+  color: rgb(101, 96, 96);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #f4e8e8;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-top: 16px;
+}
+
+.newCamp {
+  background-image: linear-gradient(
+      147deg,
+      transparent 0%,
+      transparent 8%,
+      rgba(63, 106, 202, 0.08) 8%,
+      rgba(63, 106, 202, 0.08) 46%,
+      transparent 46%,
+      transparent 100%
+    ),
+    linear-gradient(
+      107deg,
+      transparent 0%,
+      transparent 21%,
+      rgba(63, 106, 202, 0.08) 21%,
+      rgba(63, 106, 202, 0.08) 53%,
+      transparent 53%,
+      transparent 100%
+    ),
+    linear-gradient(
+      288deg,
+      transparent 0%,
+      transparent 35%,
+      rgba(63, 106, 202, 0.08) 35%,
+      rgba(63, 106, 202, 0.08) 91%,
+      transparent 91%,
+      transparent 100%
+    ),
+    linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255));
+  max-width: 400px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.newCamp h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.newCamp label {
+  display: block;
+  margin-bottom: 5px;
+  color: #0d0c0c;
+}
+
+.newCamp input[type="date"],
+.newCamp input[type="text"],
+.newCamp input[type="tel"],
+.newCamp input[type="time"],
+.newCamp textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+  color: #0d0c0c;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.newCamp input[type="submit"] {
+  background-image: linear-gradient(
+      45deg,
+      rgba(194, 194, 194, 0.1) 0%,
+      rgba(194, 194, 194, 0.1) 42%,
+      rgba(230, 230, 230, 0.1) 42%,
+      rgba(230, 230, 230, 0.1) 61%,
+      rgba(55, 55, 55, 0.1) 61%,
+      rgba(55, 55, 55, 0.1) 97%,
+      rgba(221, 221, 221, 0.1) 97%,
+      rgba(221, 221, 221, 0.1) 100%
+    ),
+    linear-gradient(
+      45deg,
+      rgba(70, 70, 70, 0.03) 0%,
+      rgba(70, 70, 70, 0.03) 33%,
+      rgba(230, 230, 230, 0.03) 33%,
+      rgba(230, 230, 230, 0.03) 45%,
+      rgba(64, 64, 64, 0.03) 45%,
+      rgba(64, 64, 64, 0.03) 46%,
+      rgba(167, 167, 167, 0.03) 46%,
+      rgba(167, 167, 167, 0.03) 48%,
+      rgba(106, 106, 106, 0.03) 48%,
+      rgba(106, 106, 106, 0.03) 74%,
+      rgba(21, 21, 21, 0.03) 74%,
+      rgba(21, 21, 21, 0.03) 94%,
+      rgba(186, 186, 186, 0.03) 94%,
+      rgba(186, 186, 186, 0.03) 96%,
+      rgba(12, 12, 12, 0.03) 96%,
+      rgba(12, 12, 12, 0.03) 100%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(31, 31, 31, 0.08) 0%,
+      rgba(31, 31, 31, 0.08) 22%,
+      rgba(201, 201, 201, 0.08) 22%,
+      rgba(201, 201, 201, 0.08) 33%,
+      rgba(93, 93, 93, 0.08) 33%,
+      rgba(93, 93, 93, 0.08) 53%,
+      rgba(240, 240, 240, 0.08) 53%,
+      rgba(240, 240, 240, 0.08) 71%,
+      rgba(136, 136, 136, 0.08) 71%,
+      rgba(136, 136, 136, 0.08) 79%,
+      rgba(5, 5, 5, 0.08) 79%,
+      rgba(5, 5, 5, 0.08) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(237, 237, 237, 0.04) 0%,
+      rgba(237, 237, 237, 0.04) 9%,
+      rgba(210, 210, 210, 0.04) 9%,
+      rgba(210, 210, 210, 0.04) 49%,
+      rgba(125, 125, 125, 0.04) 49%,
+      rgba(125, 125, 125, 0.04) 76%,
+      rgba(165, 165, 165, 0.04) 76%,
+      rgba(165, 165, 165, 0.04) 78%,
+      rgba(149, 149, 149, 0.04) 78%,
+      rgba(149, 149, 149, 0.04) 81%,
+      rgba(241, 241, 241, 0.04) 81%,
+      rgba(241, 241, 241, 0.04) 85%,
+      rgba(45, 45, 45, 0.04) 85%,
+      rgba(45, 45, 45, 0.04) 100%
+    ),
+    linear-gradient(90deg, rgb(114, 210, 86), rgb(12, 107, 39));
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.newCamp input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.mail {
+  background-color: #f9faf9;
+}
+
+.mail {
+  margin: 20px auto;
+  max-width: 800px;
+  border-collapse: collapse;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mail table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.mail th {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  text-align: left;
+}
+
+.mail td {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+.mail tr:hover {
+  background-color: #f5f5f5;
+}
+
+.mail {
+  background-image: radial-gradient(
+      circle at center center,
+      transparent,
+      rgb(255, 255, 255)
+    ),
+    linear-gradient(
+      309deg,
+      rgba(90, 90, 90, 0.05) 0%,
+      rgba(90, 90, 90, 0.05) 50%,
+      rgba(206, 206, 206, 0.05) 50%,
+      rgba(206, 206, 206, 0.05) 100%
+    ),
+    linear-gradient(
+      39deg,
+      rgba(13, 13, 13, 0.05) 0%,
+      rgba(13, 13, 13, 0.05) 50%,
+      rgba(189, 189, 189, 0.05) 50%,
+      rgba(189, 189, 189, 0.05) 100%
+    ),
+    linear-gradient(
+      144deg,
+      rgba(249, 249, 249, 0.05) 0%,
+      rgba(249, 249, 249, 0.05) 50%,
+      rgba(111, 111, 111, 0.05) 50%,
+      rgba(111, 111, 111, 0.05) 100%
+    ),
+    linear-gradient(
+      166deg,
+      rgba(231, 231, 231, 0.05) 0%,
+      rgba(231, 231, 231, 0.05) 50%,
+      rgba(220, 220, 220, 0.05) 50%,
+      rgba(220, 220, 220, 0.05) 100%
+    ),
+    linear-gradient(
+      212deg,
+      rgba(80, 80, 80, 0.05) 0%,
+      rgba(80, 80, 80, 0.05) 50%,
+      rgba(243, 243, 243, 0.05) 50%,
+      rgba(243, 243, 243, 0.05) 100%
+    ),
+    radial-gradient(
+      circle at center center,
+      hsl(107, 19%, 100%),
+      hsl(107, 19%, 100%)
+    );
+  margin: 0px auto;
+  width: 51%;
+  max-width: 800px;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: #f9faf9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.mail table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.mail th,
+.mail td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.mail th {
+  background-color: #4caf50;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.mail tr:hover {
+  background-color: #f5f5f5;
+}
+
+.mail tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.mail tbody tr:last-child td {
+  border-bottom: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  background-color: whitesmoke;
+}
+
+td {
+  color: #726d6d;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+th {
+  background-color: #f2f2f2;
+  color: #efeeeefd;
+  font-weight: 400;
+  background-color: #d42f2f;
+}
+
+tr:hover {
+  background-color: #f9f9f9;
+}
+
+.status {
+  background-image: linear-gradient(
+      112.5deg,
+      rgb(214, 214, 214) 0%,
+      rgb(214, 214, 214) 10%,
+      rgb(195, 195, 195) 10%,
+      rgb(195, 195, 195) 53%,
+      rgb(176, 176, 176) 53%,
+      rgb(176, 176, 176) 55%,
+      rgb(157, 157, 157) 55%,
+      rgb(157, 157, 157) 60%,
+      rgb(137, 137, 137) 60%,
+      rgb(137, 137, 137) 88%,
+      rgb(118, 118, 118) 88%,
+      rgb(118, 118, 118) 91%,
+      rgb(99, 99, 99) 91%,
+      rgb(99, 99, 99) 100%
+    ),
+    linear-gradient(
+      157.5deg,
+      rgb(214, 214, 214) 0%,
+      rgb(214, 214, 214) 10%,
+      rgb(195, 195, 195) 10%,
+      rgb(195, 195, 195) 53%,
+      rgb(176, 176, 176) 53%,
+      rgb(176, 176, 176) 55%,
+      rgb(157, 157, 157) 55%,
+      rgb(157, 157, 157) 60%,
+      rgb(137, 137, 137) 60%,
+      rgb(137, 137, 137) 88%,
+      rgb(118, 118, 118) 88%,
+      rgb(118, 118, 118) 91%,
+      rgb(99, 99, 99) 91%,
+      rgb(99, 99, 99) 100%
+    ),
+    linear-gradient(
+      135deg,
+      rgb(214, 214, 214) 0%,
+      rgb(214, 214, 214) 10%,
+      rgb(195, 195, 195) 10%,
+      rgb(195, 195, 195) 53%,
+      rgb(176, 176, 176) 53%,
+      rgb(176, 176, 176) 55%,
+      rgb(157, 157, 157) 55%,
+      rgb(157, 157, 157) 60%,
+      rgb(137, 137, 137) 60%,
+      rgb(137, 137, 137) 88%,
+      rgb(118, 118, 118) 88%,
+      rgb(118, 118, 118) 91%,
+      rgb(99, 99, 99) 91%,
+      rgb(99, 99, 99) 100%
+    ),
+    linear-gradient(90deg, rgb(195, 195, 195), rgb(228, 228, 228));
+  background-blend-mode: overlay, overlay, overlay, normal;
+  background-color: #f9faf9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+#cmp {
+  color: rgb(255, 0, 0);
+  text-transform: uppercase;
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size: 25px;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .newCamp {
+    max-width: 100%;
+  }
+
+  .newCamp input[type="date"],
+  .newCamp input[type="text"],
+  .newCamp input[type="tel"],
+  .newCamp input[type="time"],
+  .newCamp textarea {
+    width: 100%;
+  }
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="/Public/css/adAppoint.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="hed">
+        <p>Total Donors : {{C_Tot}} &nbsp;&nbsp;&nbsp;&nbsp; |</p>&nbsp;
+    </div><br>
+    <div class="redbox">
+        <div>
+            <img class="himg" src="/Public/img/logonew.png" alt="logo" />
+        </div>
+        <div class="l">
+            <a href="/admin/adminhome">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Camp</button>
+                <div class="dropdown-content">
+                    <a href="/admin/admincamp">New</a>
+                    <a href="/admin/adminCampDetail">Details</a>
+                    <a href="#contact">Edit</a>
+                </div>
+            </div>
+            <a href="/admin/adminDonor">Donor</a>
+            <div class="dropdown">
+                <button class="dropbtn">Request </button>
+                <div class="dropdown-content">
+                    <a href="/admin/adminRequest">New </a>
+                    <a href="/admin/adminRequestManage">Manage </a>
+                    <a href="/admin/admincampdetail"> Details</a>
+                </div>
+            </div>
+             <div class="dropdown">
+                <button class="dropbtn">Appointment </button>
+                <div class="dropdown-content">
+                    <a href="/admin/appointmnet">Manage</a>
+                    <a href="#"> Details</a>
+                </div>
+            </div>
+            </div>
+            <div class="dropdown">
+                <img  class="himg" src="/Public/img/h2.png" alt="profile">
+                <div class="dropdown-content">
+                   <a href="/admin/inventory">Inventery</a>
+                 <a href="/admin/">Logout</a>
+                 </div>
+            
+            
+        </div>
+    </div>
+     <table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Blood Group</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Respond</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each appointments}}
+            {{#each this.appointment}}
+                <tr>
+                    <td>{{this.name}}</td>
+                    <td>{{this.bloodGroup}}</td>
+                    <td>{{this.date}}</td>
+                    <td>{{this.status}}</td>
+                    <td><a id="statusBlock" href="/admin/appointOk/{{this.id}}">Ok</a></td>
+                </tr>
+            {{/each}}
+        {{/each}}
+    </tbody>
+</table>
+
+
+   
+
+</body>
+
+
+
+</html>

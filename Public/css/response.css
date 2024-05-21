@@ -1,0 +1,224 @@
+*
+{
+  color: #9f190c;
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+p{
+   color:#3c3b3b;
+   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+   margin-right: 1%;
+   font-weight: 370;
+}
+body{
+  background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  background-image: linear-gradient(216deg, rgba(20, 19, 19, 0.2) 0%, rgba(20, 19, 19, 0.2) 25%, rgba(16, 14, 14, 0.11) 25%, rgba(16, 14, 14, 0.11) 38%, rgba(223, 223, 223, 0.05) 38%, rgba(223, 223, 223, 0.05) 75%, rgba(18, 15, 15, 0.05) 75%, rgba(18, 15, 15, 0.05) 100%), linear-gradient(44deg, rgba(128, 128, 128, 0.05) 0%, rgba(128, 128, 128, 0.05) 34%, rgba(5, 5, 5, 0.05) 34%, rgba(5, 5, 5, 0.05) 57%, rgba(25, 25, 25, 0.05) 57%, rgba(25, 25, 25, 0.05) 89%, rgba(12, 11, 11, 0.05) 89%, rgba(12, 11, 11, 0.05) 100%), linear-gradient(241deg, rgba(5, 5, 5, 0.05) 0%, rgba(5, 5, 5, 0.05) 14%, rgba(209, 209, 209, 0.05) 14%, rgba(209, 209, 209, 0.05) 60%, rgba(30, 24, 24, 0.05) 60%, rgba(30, 24, 24, 0.05) 69%, rgba(20, 19, 19, 0.2) 69%, rgba(20, 19, 19, 0.2) 100%), linear-gradient(249deg, rgba(12, 11, 11, 0.05) 0%, rgba(12, 11, 11, 0.05) 32%, rgba(148, 148, 148, 0.16) 32%, rgba(148, 148, 148, 0.16) 35%, rgba(202, 202, 202, 0.05) 35%, rgba(202, 202, 202, 0.05) 51%, rgba(181, 181, 181, 0.05) 51%, rgba(181, 181, 181, 0.05) 100%), linear-gradient(92deg, rgb(255, 255, 255), rgb(255, 255, 255));
+   /* background-color: #89848451; */
+}
+.hed{
+   margin-top: -1%;
+   margin-bottom: -1%;
+   background-color: #8b80801e;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: end;
+   box-shadow: 1px 2px 0px rgba(109, 95, 95, 0.664);
+   
+}
+.redbox{
+    display: flex;
+    position: sticky;
+    top:0;
+    justify-content:space-between;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+ }
+ .redbox img{
+    width: 100px;
+    margin: 0px;
+    box-shadow: 4px 4px 8px rgba(5, 1, 1, 0.664);
+ }
+ .redbox{
+   box-shadow: 0px 2px 0px rgba(121, 109, 109, 0.664);
+ }
+ .himg{
+   border-radius: 50%;
+   width:10%;
+
+ }
+ .l{
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: space-between;
+ }
+ 
+ .logout
+ {
+   display: flex;
+   background-color: #df0a0a;
+   align-items: center;
+   width: 10%;
+   justify-content: center;
+ }
+ a{
+    text-decoration: none;
+    font-weight: 600;
+    color: rgb(106, 100, 100);
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: larger;
+ }
+ #logout
+ {
+   background-color: #9f190c;
+   color: beige;
+ }
+ a:hover
+ {
+    text-shadow: 2px 2px 4px rgb(149, 139, 138);
+    
+ }
+table {
+    width: 99%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    margin-left: 1%;
+    margin-right: 3%;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    background-color:whitesmoke;
+}
+td{
+    color: #0d0c0c;
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #de0e0e;
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Form styles */
+form {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+input[type="button"] {
+  background-image: linear-gradient(56deg, rgba(254, 254, 254, 0.05) 0%, rgba(254, 254, 254, 0.05) 69%, rgba(160, 160, 160, 0.05) 69%, rgba(160, 160, 160, 0.05) 100%), linear-gradient(194deg, rgba(102, 102, 102, 0.02) 0%, rgba(102, 102, 102, 0.02) 60%, rgba(67, 67, 67, 0.02) 60%, rgba(67, 67, 67, 0.02) 100%), linear-gradient(76deg, rgba(169, 169, 169, 0.06) 0%, rgba(169, 169, 169, 0.06) 89%, rgba(189, 189, 189, 0.06) 89%, rgba(189, 189, 189, 0.06) 100%), linear-gradient(326deg, rgba(213, 213, 213, 0.04) 0%, rgba(213, 213, 213, 0.04) 45%, rgba(66, 66, 66, 0.04) 45%, rgba(66, 66, 66, 0.04) 100%), linear-gradient(183deg, rgba(223, 223, 223, 0.01) 0%, rgba(223, 223, 223, 0.01) 82%, rgba(28, 28, 28, 0.01) 82%, rgba(28, 28, 28, 0.01) 100%), linear-gradient(3deg, rgba(20, 20, 20, 0.06) 0%, rgba(20, 20, 20, 0.06) 62%, rgba(136, 136, 136, 0.06) 62%, rgba(136, 136, 136, 0.06) 100%), linear-gradient(200deg, rgba(206, 206, 206, 0.09) 0%, rgba(206, 206, 206, 0.09) 58%, rgba(6, 6, 6, 0.09) 58%, rgba(6, 6, 6, 0.09) 100%), linear-gradient(304deg, rgba(162, 162, 162, 0.07) 0%, rgba(162, 162, 162, 0.07) 27%, rgba(24, 24, 24, 0.07) 27%, rgba(24, 24, 24, 0.07) 100%), linear-gradient(186deg, rgba(166, 166, 166, 0.04) 0%, rgba(166, 166, 166, 0.04) 5%, rgba(210, 210, 210, 0.04) 5%, rgba(210, 210, 210, 0.04) 100%), linear-gradient(90deg, rgb(26, 118, 64), rgb(32, 207, 121), rgb(78, 196, 128));
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#now
+{
+  padding-bottom: 15px; 
+    margin-bottom: 20px;
+    border-bottom: 4px solid;
+    border-radius: 1.5em;
+    border-image: linear-gradient(to right, #e00d0d, #f90000);
+    border-image-slice: 1;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    th, td {
+        padding: 8px;
+    }
+
+    input[type="submit"] {
+        padding: 6px 12px;
+    }
+}
+.foot {
+  background-image: linear-gradient(135deg, rgba(19, 176, 223, 0.26) 0%, rgba(19, 176, 223, 0.26) 23%,rgba(16, 160, 197, 0.26) 23%, rgba(16, 160, 197, 0.26) 65%,rgba(13, 144, 172, 0.26) 65%, rgba(13, 144, 172, 0.26) 70%,rgba(9, 129, 146, 0.26) 70%, rgba(9, 129, 146, 0.26) 74%,rgba(6, 113, 121, 0.26) 74%, rgba(6, 113, 121, 0.26) 90%,rgba(3, 97, 95, 0.26) 90%, rgba(3, 97, 95, 0.26) 100%),linear-gradient(45deg, rgba(65, 234, 230, 0.26) 0%, rgba(65, 234, 230, 0.26) 28%,rgba(88, 192, 215, 0.26) 28%, rgba(88, 192, 215, 0.26) 55%,rgba(110, 150, 201, 0.26) 55%, rgba(110, 150, 201, 0.26) 66%,rgba(133, 107, 186, 0.26) 66%, rgba(133, 107, 186, 0.26) 80%,rgba(155, 65, 172, 0.26) 80%, rgba(155, 65, 172, 0.26) 85%,rgba(178, 23, 157, 0.26) 85%, rgba(178, 23, 157, 0.26) 100%),linear-gradient(90deg, rgb(27, 194, 246) 0%, rgb(27, 194, 246) 6%,rgb(39, 174, 237) 6%, rgb(39, 174, 237) 32%,rgb(50, 155, 229) 32%, rgb(50, 155, 229) 40%,rgb(62, 135, 220) 40%, rgb(62, 135, 220) 66%,rgb(74, 116, 211) 66%, rgb(74, 116, 211) 72%,rgb(86, 96, 202) 72%, rgb(86, 96, 202) 86%,rgb(97, 77, 194) 86%, rgb(97, 77, 194) 96%,rgb(109, 57, 185) 96%, rgb(109, 57, 185) 100%);
+    display: flex;
+    justify-content: center;
+    background-color: #e91c1cd0;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+ }
+ .sticky-box {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: #f1f1f1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+ }
+ 
+.profile {
+  position: relative;
+  display: inline-block;
+  /* margin-left: 20px; */
+  margin-right: 2%;
+
+}
+
+
+.profile img {
+  border-radius: 50%; 
+  cursor: pointer; 
+}
+
+
+.dropdown {
+    display:none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    right: 0;
+}
+
+
+.dropdown a {
+  display: block;
+  padding: 5px 10px;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+
+.dropdown a:hover {
+  background-color: #ddd;
+}
+
+
+.profile:hover .dropdown {
+  display: block;
+}

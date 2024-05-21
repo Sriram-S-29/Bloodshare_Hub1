@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <title>Profile</title>
+    <link rel="stylesheet" type="text/css" href="/Public/css/profile.css" />
+</head>
+
+<body>
+    <div class="hed">
+        <p>Total Donors : {{C_Tot}} &nbsp;&nbsp;&nbsp;&nbsp; |</p>&nbsp;
+        <p>Total Donors in your District : {{C_dis}}</p>
+    </div><br>
+    <div class="redbox">
+        <div>
+            <img class="himg" src="/Public/img/logonew.png" alt="logo" />
+        </div>
+        <div class="l">
+            <nav>
+                <a href="/home">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/appointment">Appointment</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/response">Respond</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/camp">Camp</a>
+
+            </nav>
+        </div>
+        <div class="profile">
+            <img src="/Public/img/profile.png" alt="profile">
+            <div class="dropdown">
+                <a href="/profile">Profile</a>
+                <a href="/">Logout</a>
+            </div>
+        </div>
+
+
+    </div>
+    {{#if msg}}
+    <script>alert('{{msg}}')</script>
+    {{/if}}
+    <div class="container">
+        <div>
+            <form action="/profileUpdate" method="post" enctype="multipart/form-data" aria-required="true">
+                
+                    <div class="header">
+                        <img src="../../Public/img/uploaded-images/{{details.image}}" alt="Profile Photo" class="profile-photo">
+                        <h1 class="name">Donor</h1>
+                    </div>
+                </div>
+                <div class="details">
+                    <label for="productimage" class="custom-file-input">Edit Photo</label>
+                    <input type="file" id="productimage" name="productimage" class="form-control" accept="image/*"
+                        multiple>
+                    <span class="file-name"></span>
+                {{!-- <input type="file" name="productimage" class="form-control " accept="image/*" / multiple> --}}
+                {{!-- <img class="proimg" src="../../Public/img/uploaded-images/{{details.image}}" alt=""> --}}
+                <div class="details">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" value={{details.name}}>
+                </div>
+                <div class="details">
+                    <label for="phno">Phone Number</label>
+                    <input type="tel" id="phno" name="phno" pattern="[0-9]{10}" value={{details.phno}}>
+                </div>
+                <div class="details">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" min="18" max="65" value={{details.age}}>
+                </div>
+                <div class="details">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" value={{details.email}}>
+                </div>
+                <div class="details">
+                    <label for="district">District</label>
+                    <input type="text" id="district" name="district" value={{details.district}}>
+                </div>
+                <div class="details">
+                    <label for="Weight">Weight</label>
+                    <input type="text" id="weight" name="weight" min="50" value={{details.weight}}>
+                </div>
+                <div class="details">
+                    <label for="Last Donation"> Last donation</label>
+                    <input type="text" id="l_donation" name="l_donation" value="{{details.last_donate}}">
+                </div>
+                <div class="details">
+                    <a id="open" onclick="showHelp()">
+                        <p>Edit Last Donation date</p>
+                    </a>
+                    <div id="hide">
+                        <input type="date" id="edit_date" name="edit_date">
+                    </div>
+
+                </div>
+
+                <div class="details">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+            {{#if successMessage}}
+            <div class="popup">
+                <span class="popuptext">{{ successMessage }}</span>
+            </div>
+            {{/if}}
+        </div>
+
+    </div>
+
+    {{!-- <div class="sticky-box">
+        STATS
+    </div> --}}
+     {{!-- <footer class="foot">
+        &copy; Code by Sriram
+    </footer> --}}
+    <script>
+        function showHelp() {
+            var helpDiv = document.getElementById("hide");
+            if (window.getComputedStyle(helpDiv).display === "none") {
+                helpDiv.style.display = "block";
+            } else {
+                helpDiv.style.display = "none";
+            }
+        }
+    </script>
+
+</html>

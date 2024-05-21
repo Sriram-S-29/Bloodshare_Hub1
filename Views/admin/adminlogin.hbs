@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@700&family=Pacifico&display=swap"
+        rel="stylesheet" />
+
+    <link rel="icon" type="image/png" href="logo.png" />
+    <link rel="stylesheet" type="text/css" href="/Public/css/index.css" />
+</head>
+
+<body>
+    <div id="toast" class="toast"></div>
+
+    <div class="outter">
+        <div class="inner flex">
+            {{#if errMsg}}
+            <script>alert('{{errMsg}}')</script>
+            {{/if}}
+
+            <div class="flex-end">
+                <img src="../Public/img/logonew.png" class="logo" alt="Blood Share Hub Logo" /><br />
+                <h1 id="title"> ADMIN LOGIN</h1>
+                <div class="form">
+                    <form action="/admin/loginCheck" method="post">
+                        <input type="email" id="username" name="email" class="input" placeholder="EMAIL"
+                            required /><br />
+                        <input type="text" placeholder="PASSWORD" id="password" name="password" class="input"
+                            required />
+                            <div class="tempbtn">
+                                <input class="button" type="submit" />
+                            </div>
+                        
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+</body>
+
+</html>

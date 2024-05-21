@@ -1,0 +1,90 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@700&family=Pacifico&display=swap"
+        rel="stylesheet" />
+       <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="icon" type="image/png" href="logo.png" />
+    <link rel="stylesheet" type="text/css" href="Public/css/index.css" />
+</head>
+
+<body>
+    <div id="toast" class="toast"></div>
+
+    <div class="outter">
+        <div class="inner flex">
+            {{!-- {{#if errMsg}}
+            <script>alert('{{errMsg}}')</script>
+            {{/if}} --}}
+
+            <div class="flex-end">
+                <img src="../Public/img/logonew.png" class="logo" alt="Blood Share Hub Logo" /><br />
+                <h1 id="title">LOGIN</h1>
+                <div class="form">
+                    <form action="/loginCheck" method="post">
+                        <input type="text" id="username" name="name" class="input" placeholder="USERNAME"
+                            required /><br />
+                        <!-- <label for="password">Password:</label> -->
+                        <input type="password" placeholder="PASSWORD" id="password" name="password" class="input"
+                            required />
+                        <a href="./forgotpage">Forgot Password?</a>
+                        <div class="subtn">
+                            <input class="button" type="submit" />
+                        </div>
+                    </form>
+                    <label id="or">OR</label>
+                    <div class="sign">
+                        <a href="./signup"> Sign Up </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+</body>
+<script>
+
+    let err='{{errMsg}}'
+    console.log(typeof(err))
+    if(err==='User Not Found' || err==='Wrong Password ' || err==='You have been temporarily blocked by the admin')
+    {
+        console.log('yes')
+        fail(err);
+    }
+    else
+    {
+        console.log('er')   
+    }
+    
+
+
+    
+        function fail(err) {
+                console.log("OK seet")
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: "top-end",
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.onmouseenter = Swal.stopTimer;
+                        toast.onmouseleave = Swal.resumeTimer;
+                    }
+                });
+                Toast.fire({
+                    icon: "error",
+                    title: err
+                });
+            }
+    
+</script>
+
+</html>

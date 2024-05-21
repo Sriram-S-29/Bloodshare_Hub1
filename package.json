@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "connect-mongo": "^5.1.0",
+    "express": "^4.19.2",
+    "express-handlebars": "^7.1.2",
+    "express-session": "^1.18.0",
+    "hbs": "^4.2.0",
+    "mongodb": "^6.5.0",
+    "mongoose": "^8.2.3",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.13",
+    "nodemon": "^3.1.0",
+    "openai": "^4.40.2",
+    "sweetalert2": "^11.10.8"
+  }
+}

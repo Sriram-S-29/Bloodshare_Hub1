@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <title>Donor</title>
+    <link rel="stylesheet" type="text/css" href="/Public/css/admindonor.css" />
+</head>
+
+<body>
+    {{#if msg}}
+    <script>alert('{{msg}}')</script>
+    {{/if}}
+    <div class="hed">
+        <p>Total Donors : {{C_Tot}} &nbsp;&nbsp;&nbsp;&nbsp; |</p>&nbsp;
+    </div><br>
+    <div class="redbox">
+        <div>
+            <img class="himg" src="/Public/img/logonew.png" alt="logo" />
+        </div>
+        <div class="l">
+            <a href="/admin/adminhome">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Camp</button>
+                <div class="dropdown-content">
+                    <a href="/admin/admincamp">New</a>
+                    <a href="/admin/adminCampDetail">Details</a>
+                </div>
+            </div>
+            <a href="/admin/adminDonor">Donor</a>
+            <div class="dropdown">
+                <button class="dropbtn">Request </button>
+                <div class="dropdown-content">
+                    <a href="/admin/adminRequest">New </a>
+                    <a href="/admin/adminRequestManage">Manage </a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Appointment </button>
+                <div class="dropdown-content">
+                    <a href="/admin/appointment">Manage</a>
+                    <a href="#"> Details</a>
+                </div>
+            </div>
+        </div>
+        <div class="dropdown">
+            <img class="himg" src="/Public/img/h2.png" alt="profile">
+            <div class="dropdown-content">
+                 <a href="/admin/inventory">Inventery</a>
+                <a href="/admin/">Logout</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="formclass">
+            <form   class="formclass" action="/admin/showInfo" method="post">
+                <input type="text" class="input" placeholder="District" id="info" name="district" />
+                <input type="text" class="input" placeholder="BloodGroup" id="info" name="bloodGroup" />
+                <input type="text" class="input" placeholder="Phone number" id="info" name="phno" />
+                <button type="submit">show</button>
+            </form>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>District</th>
+                    <th>Age</th>
+                    <th>Blood Group</th>
+                    <th>Phone Number</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each userData}}
+                <tr>
+                    <td>{{this.name}}</td>
+                    <td>{{this.district}}</td>
+                    <td>{{this.age}}</td>
+                    <td>{{this.bloodGroup}}</td>
+                    <td>{{this.phno}}</td>
+                    {{#if this.status}}
+                    <td><a id="statusBlock" href="/admin/status?id={{this.id}}">Block</a>
+                    </td>
+
+                    {{else}}
+                    <td><a id="status" href="/admin/status?id={{this.id}}">Unblock</a></td>
+
+                    {{/if}}
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+
+
+
+    </div>
+
+
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="/Public/css/adminHome.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="hed">
+        <p>Total Donors : {{C_Tot}} &nbsp;&nbsp;&nbsp;&nbsp; |</p>&nbsp;
+    </div><br>
+    <div class="redbox">
+        <div>
+            <img class="himg" src="/Public/img/logonew.png" alt="logo" />
+        </div>
+        <div class="l">
+            <a href="/admin/adminhome">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">Camp</button>
+                <div class="dropdown-content">
+                    <a href="/admin/admincamp">New</a>
+                    <a href="/admin/adminCampDetail">Details</a>
+                </div>
+            </div>
+            <a href="/admin/adminDonor">Donor</a>
+            <div class="dropdown">
+                <button class="dropbtn">Request </button>
+                <div class="dropdown-content">
+                    <a href="/admin/adminRequest">New </a>
+                    <a href="/admin/adminRequestManage">Manage </a>
+                </div>
+            </div>
+             <div class="dropdown">
+                <button class="dropbtn">Appointment </button>
+                <div class="dropdown-content">
+                    <a href="/admin/appointment">Manage</a>
+                    <a href="#"> Details</a>
+                </div>
+            </div>
+            </div>
+            <div class="dropdown">
+                <img  class="himg" src="/Public/img/h2.png" alt="profile">
+                <div class="dropdown-content">
+                  <a href="/admin/inventory">Inventery</a>
+                 <a href="/admin/">Logout</a>
+                 </div>
+            
+            
+        </div>
+    </div>
+    <h1>Blood Group Distribution Chart</h1>
+    <div class="p">
+        <canvas id="myChart" width="400" height="400"></canvas>
+        <canvas id="myChart2" width="400" height="400"></canvas>
+    </div>
+    <div class="div1">
+        <h1 class="t1">THE TOTAL COUNT OF EACH BLOOD GROUP</h1>
+    </div>
+
+    <div class="containerblood">
+        <div class="outerflex">
+            <div class="box">
+                <div class="innerflex">
+                    <div class="leftbox">
+                        <div class="kodu">
+                            <p>{{bloodGroups.a_p}}</p>
+                        </div>
+                        {{!-- <p>THE TOTAL COUNT OF A+</p> --}}
+                    </div>
+                    <div class="rightbox">
+                        <img src="/Public/img/A+.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="innerflex">
+                    <div class="leftbox">
+                        <div class="kodu">
+                            <p>{{bloodGroups.a_n}}</p>
+                        </div>
+                        {{!-- <p>THE TOTAL COUNT OF A-</p> --}}
+                    </div>
+                    <div class="rightbox">
+                        <img src="/Public/img/A-.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="innerflex">
+                    <div class="leftbox">
+                        <div class="kodu">
+                            <p>{{bloodGroups.ab_p}}</p>
+                        </div>
+                        {{!-- <p>THE TOTAL COUNT OF AB+</p> --}}
+                    </div>
+                    <div class="rightbox">
+                        <img src="/Public/img/AB+.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="innerflex">
+                    <div class="leftbox">
+                        <div class="kodu">
+                            <p>{{bloodGroups.ab_n}}</p>
+                        </div>
+                        {{!-- <p>THE TOTAL COUNT OF AB-</p> --}}
+                    </div>
+                    <div class="rightbox">
+                        <img src="/Public/img/AB-.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="innerflex">
+                    <div class="leftbox">
+                        <div class="kodu">
+                            <p>{{bloodGroups.b_p}}</p>
+                        </div>
+                        {{!-- <p>THE TOTAL COUNT OF B+</p> --}}
+                    </div>
+                    <div class="rightbox">
+                        <img src="/Public/img/B+.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="innerflex">
+                    <div class="leftbox">
+                        <div class="kodu">
+                            <p>{{bloodGroups.b_n}}</p>
+                        </div>
+                        {{!-- <p>THE TOTAL COUNT OF B-</p> --}}
+                    </div>
+                    <div class="rightbox">
+                        <img src="/Public/img/B-.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="innerflex">
+                    <div class="leftbox">
+                        <div class="kodu">
+                            <p>{{bloodGroups.o_p}}</p>
+                        </div>
+                        {{!-- <p>THE TOTAL COUNT OF O+</p> --}}
+                    </div>
+                    <div class="rightbox">
+                        <img src="/Public/img/O+.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="innerflex">
+                    <div class="leftbox">
+                        <div class="kodu">
+                            <p>{{bloodGroups.o_n}}</p>
+                        </div>
+                        {{!-- <p>THE TOTAL COUNT OF O-</p> --}}
+                    </div>
+                    <div class="rightbox">
+                        <img src="/Public/img/O-.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var ctx2 = document.getElementById('myChart2').getContext('2d');
+        var labels = {{{ labels }}};
+        var values = {{{ values }}};
+
+        var label = {{{ label }}};
+        var value = {{{ value }}};
+
+        var myChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Blood Group Distribution',
+                    data: values,
+                    backgroundColor: [
+                        '#dc3545', 
+                        '#007bff', 
+                        '#28a745', 
+                        '#ffc107', 
+                        '#6c757d', 
+                        '#17a2b8',
+                        '#28a745',
+                        '#6c757d',
+                        '#ffc107'
+
+
+                        
+                    ],
+                    borderColor: '#fff', // White border color
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: false
+            }
+        });
+
+         var myChart = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: label,
+                datasets: [{
+                    label: 'Blood Group Distribution',
+                    data: value,
+                    backgroundColor: [
+                        'rgba(220, 53, 69, 0.8)',
+                        'rgba(0, 123, 255, 0.8)', 
+                        'rgba(40, 167, 69, 0.8)', 
+                        'rgba(255, 193, 7, 0.8)',
+                        'rgba(108, 117, 125, 0.8)',
+                        'rgba(23, 162, 184, 0.8)' 
+                    ],
+                    borderColor: '#fff',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+    </script>
+
+
+</body>
+
+
+
+</html>

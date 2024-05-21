@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <title>Status</title>
+    <link rel="stylesheet" type="text/css" href="/Public/css/profile.css" />
+    <style>
+        
+
+        .line {
+            float: left;
+            position: relative;
+            width: 150px;
+            height: 3px;
+            background: #dad0d0;
+            top: 200px;
+        }
+
+        .line:before {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: green;
+            content: "";
+            top: -6px;
+            border-radius: 50%;
+        }
+        .line2 {
+            float: left;
+            position: relative;
+
+            top: 200px;
+        }
+
+       
+         .line2:nth-child(3):after {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: green;
+            content: "";
+            top: -6px;
+            right: -10px;
+            border-radius: 50%;
+        }
+
+        .line:nth-child(3):after {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: green;
+            content: "";
+            top: -6px;
+            right: -10px;
+            border-radius: 50%;
+        }
+
+        .status {
+            position: absolute;
+            left: -20px;
+            top: 20px;
+        }
+
+        .line:nth-child(3) .status:nth-child(2) {
+            left: 120px;
+            white-space: nowrap;
+        }
+
+        .inner-line-1,
+        .inner-line-2,
+        .inner-line-3
+         {
+            width: 0%;
+            height: 100%;
+            background: green;
+        }
+
+        .inner-line-1 {
+            animation: flow 4s ease-in forwards;
+        }
+
+        .inner-line-2 {
+            animation: flow 4s ease-in forwards;
+            animation-delay: 3s;
+        }
+
+        .inner-line-3 {
+            animation: flow 4s ease-in forwards;
+            animation-delay: 6s;
+        }
+        .inner-line-4 {
+            animation: flow 4s ease-in forwards;
+            animation-delay: 6s;
+        }
+
+        @keyframes flow {
+            from {
+                width: 10%;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hed">
+        <p>Total Donors : {{C_Tot}} &nbsp;&nbsp;&nbsp;&nbsp; |</p>&nbsp;
+        <p>Total Donors in your District : {{C_dis}}</p>
+    </div><br>
+    <div class="redbox">
+        <div>
+            <img class="himg" src="/Public/img/logonew.png" alt="logo" />
+        </div>
+        <div class="l">
+            <nav>
+                <a href="/home">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/appointment">Appointment</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/response">Respond</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/camp">Camp</a>
+
+            </nav>
+        </div>
+        <div class="profile">
+            <img src="/Public/img/profile.png" alt="profile">
+            <div class="dropdown">
+                <a href="/profile">Profile</a>
+                <a href="/">Logout</a>
+            </div>
+        </div>
+    </div>
+       {{!-- <!-- {{#if msg}}
+    <script>alert('{{msg}}')</script>
+    {{/if}} --> --}}
+    <div class="statusBox">
+        <div>
+            <h1>Your Blood Status</h1>
+        </div>
+        <div class="s">
+            <div class="line">
+                <div class="inner-line-1"></div>
+                <div class="status">Donated</div>
+              </div>
+              <div class="line">
+                <div class="inner-line-2"></div>
+                <div class="status">Processed</div>
+              </div>
+              <div class="line">
+                <div class="status">Transferred</div>
+                <div class="inner-line-3"></div>
+                
+              </div>
+              <div class="line2">
+                {{!-- <div class="inner-line-4"></div> --}}
+                <div class="status">Used</div>
+              </div>
+              
+        </div>
+    </div>
+     {{!-- <footer class="foot">
+        &copy; Code by Sriram
+    </footer> --}}
+        
+</body>
+
+</html>

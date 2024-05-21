@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" type="text/css" href="/Public/css/appoint.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 8px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .cont {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            align-items: center;
+        }
+
+        #content1,
+        #content2 {
+            display: none;
+            padding: 2%;
+
+        }
+
+        #content3 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            max-width: 100px;
+            max-height: 100px;
+        }
+
+        .btn {
+            background-image: radial-gradient(circle at top right, rgb(145, 8, 41) 0%, rgb(145, 8, 41) 22%, rgb(156, 9, 37) 22%, rgb(156, 9, 37) 38%, rgb(167, 9, 34) 38%, rgb(167, 9, 34) 39%, rgb(178, 10, 30) 39%, rgb(178, 10, 30) 43%, rgb(188, 10, 26) 43%, rgb(188, 10, 26) 64%, rgb(199, 11, 22) 64%, rgb(199, 11, 22) 96%, rgb(210, 11, 19) 96%, rgb(210, 11, 19) 99%, rgb(221, 12, 15) 99%, rgb(221, 12, 15) 100%);
+            font-family: "Poppins", Arial, sans-serif;
+            font-weight: 100;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: .5rem;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hed">
+        <p>Total Donors : {{C_Tot}} &nbsp;&nbsp;&nbsp;&nbsp; |</p>&nbsp;
+        <p>Total Donors in your District : {{C_dis}}</p>
+    </div><br>
+    <div class="redbox">
+        <div>
+            <img class="himg" src="/Public/img/logonew.png" alt="logo" />
+        </div>
+        <div class="l">
+            <nav>
+                <a href="/home">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a  id="now" href="/appointment">Appointment</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/response">Respond</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/camp">Camp</a>
+
+            </nav>
+        </div>
+        <div class="profile">
+            <img src="/Public/img/profile.png" alt="profile">
+            <div class="dropdown">
+                <a href="/profile">Profile</a>
+                <a href="/">Logout</a>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button id="showContent1" class="btn" onclick="showContent(1)">New Appointment</button>
+        <button id="showContent2" class="btn" onclick="showContent(2)">My Appointment</button>
+    </div>
+    <div class="cont">
+        <div id="content1">
+            <div class="container" style="font-weight: 700;">
+                <h1>Book an Appointment for Blood Donation</h1>
+                <form action="appointmentBook" method="post" id="appointmentForm">
+                    <label for="Name">Name</label>
+                    <input type="text" id="name" name="name" readonly value="{{lastD.name}}">
+                    <label for="Blood Group">Blood Group</label>
+                    <input type="text" id="bloodGroup" name="bloodGroup" readonly value="{{lastD.bloodGroup}}">
+
+                    <label for="phone">Date</label>
+                    <input type="date" id="date" name="date">
+
+                    <label for="blood-type">Hospital Name</label>
+                    <select id="blood-type" name="H_name" required>
+                        <option value="">Select</option>
+                        {{#each HosDetail}}
+                        <option value="{{this.H_name}}">{{this.H_name}}</option>
+                        {{/each}}
+                    </select>
+                    <label for="Last Donation">Last Donation</label>
+
+                    <input type="text" id="l_donation" name="l_donation" readonly value="{{lastD.last_donate}}">
+                    <div style="text-align: center;">
+                        <input type="button" onclick="call()" value="Book Appointment">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <div id="content2">
+            <table>
+                <thead>
+                    <tr>
+                        <th>DATE</th>
+                        <th>Hospital Name</th>
+                        <th>Location</th>
+                        <th>Response</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{appoint.date}}</td>
+                        <td>{{hos.H_name}}</td>
+                        <td>
+                            <iframe src="{{hos.Place}}" frameborder="0"
+                                style="width: 300px !important; height: 200px !important;"></iframe>
+                        </td>
+
+
+                        <td>{{appoint.status}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="content3">
+            <img width="590px" height="470px" src="/Public/img/gif.gif" alt="no">
+
+        </div>
+        {{!-- <footer class="foot">
+            &copy; Code by Sriram
+        </footer> --}}
+
+    </div>
+
+    <script>
+
+        function showContent(contentNumber) {
+            if (contentNumber === 1) {
+                document.getElementById('content1').style.display = 'flex';
+                document.getElementById('content2').style.display = 'none';
+                document.getElementById('content3').style.display = 'none';
+            } else {
+                document.getElementById('content1').style.display = 'none';
+                document.getElementById('content2').style.display = 'flex';
+                document.getElementById('content3').style.display = 'none';
+            }
+        }
+        function call() {
+            console.log("in enteres")
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById("appointmentForm").submit();
+                }
+            });
+        }
+
+        let msg = '{{ msg }}'
+        if (msg=='1') {
+            ok()
+        }
+        else{
+            console.log('no')
+        }
+        function ok() {
+            console.log("OK seet")
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 5000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                }
+            });
+            Toast.fire({
+                icon: "success",
+                title: "Appointment sent! Please wait for confirmation."
+            });
+        }
+    </script>
+</body>
+
+</html>

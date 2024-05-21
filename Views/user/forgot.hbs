@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@700&family=Pacifico&display=swap"
+        rel="stylesheet" />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <link rel="icon" type="image/png" href="/Public/img/logonew.png" />
+    <link rel="stylesheet" type="text/css" href="/Public/css/forget.css" />
+</head>
+
+<body>
+    <div class="entire">
+        <div class="outter">
+        <div>
+            <img src="/Public/img/logonew.png" class="logo" alt="Blood Share Hub Logo" />
+        </div>
+
+        <div class="header">
+            <h1 class="forgetHead">
+                Enter your email and we'll send you a OTP to get back into your
+                account.
+            </h1>
+        </div>
+        {{#unless otpval}}
+        {{#unless show}}
+        <div class="generateOtp" id="first">
+            <form action="/generateOtp" method="post">
+                <input class="input" type="email" placeholder="Enter your email" name="email" />
+                <button class="button" type="submit">Send Code</button>
+            </form>
+        </div>
+        {{/unless}}
+        {{/unless}}
+        {{#unless show}}
+        {{#if otpVal}}
+        <div class="otpDiv">
+            <form action="/verify" method="post">
+                <input class="input" type="text" placeholder="Enter Verification Code" name="code" />
+                <button class="button" type="submit">Verify</button>
+            </form>
+        </div>
+        {{/if}}
+        {{/unless}}
+        {{#if show}}
+        <div class="newPass">
+
+            <form action="/changePass" method="post">
+                <input type="password" class="input" placeholder="Enter New Password" id="newPass" name="newPass" />
+                <button class="button" type="submit">Verify</button>
+            </form>
+
+        </div>
+        {{/if}}
+
+    </div>
+
+    </div>
+    
+</body>
+<script>
+    let otp = JSON.parse("{{otpVal}}");
+    if (otp) {
+        call();
+        let d=document.getElementById('first')
+        d.style.display='none'
+    }
+
+    function call() {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            },
+        });
+        Toast.fire({
+            icon: "success",
+            title: "OTP Sent",
+        });
+    }
+
+</script>
+
+</html>

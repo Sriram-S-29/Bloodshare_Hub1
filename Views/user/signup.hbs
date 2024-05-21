@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@700&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="icon" type="image/png" href="/Public/css/logonew.png">
+    <link rel="stylesheet" type="text/css" href="/Public/css/signup.css">
+</head>
+
+<body>
+    <div class="outter">
+        <div class="inner flex">
+            <div class="flex-end">
+                <img src="Public/img/logonew.png" class="logo" alt="Blood Share Hub Logo">
+                <h1 id="title">SIGNUP </h1>
+                <div class="form" id="form">
+                    <form class="forms" action="/newUser" method="post">
+                        <input type="text" class="input" placeholder=" Name" name="name" pattern="[A-Za-z]+"
+                            title="Name should contain alphabetic characters only" required>
+                        <input type="email" class="input" placeholder=" E-mail" name="email"
+                            title="Please enter a valid email address" required>
+
+                        <input type="text" class="input" placeholder="Phno" name="phno">
+                        <select class="input" id="bloodgroup" name="bloodGroup">
+                            <option value="" disabled selected>Select your blood group</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                        <input type="password" class="input" placeholder=" New Password" id="password" name="password">
+                        <input type="submit" class="button">
+                        <p id="inpass"></p>
+                    </form>
+                    <label id="or">Already have account?</label>
+                    <a class="sign" href="./"> login </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    document.getElementById('form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        var password = document.getElementById('password').value;
+        if (!password.match(/^(?=.*\d)(?=.*[a-zA-Z]).{6,}$/)) {
+            document.getElementById('inpass').innerHTML = 'Password must contain at least one number and one letter, and be at least 6 characters long.';
+        } else {
+            console.log('Password meets criteria');
+            event.target.submit();
+        }
+    });
+
+    let yes = JSON.parse('{{already}}')
+    if (yes) {
+        fail();
+        console.log(yes)
+    }
+    function fail() {
+        console.log("OK seet")
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+        });
+        Toast.fire({
+            icon: "error",
+            title: 'Email Already Exists'
+        });
+    }
+
+
+</script>
+
+</html>

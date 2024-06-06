@@ -4,12 +4,12 @@ const sendMail = async (name, content,email, otp) => {
         const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "bloodsharehub@gmail.com",
-        pass: "lgry qxfl qpef ebut",
+        user: " ",
+        pass: "",
       }
     })
         const mailOptions = {
-            from: 'www.sriramram173@gmail.com',
+            from: '',
             to: email,
             subject: content,
             html: '<p>Hi ' + name + ',This is from BloodShare Hub.<br> It is your OTP : ' + otp + '</p>'
@@ -31,12 +31,12 @@ const campMail = async (name, email, place, district, date,phno) => {
         const transporter = nodemailer.createTransport({
             service: "gmail",
             auth: {
-                user: "bloodsharehub@gmail.com",
-                pass: "lgry qxfl qpef ebut",
+                user: " ",
+                pass: " ",
             }
         })
         const mailOptions = {
-            from: 'bloodsharehub@gmail.com',
+            from: ' ',
             to: email,
             subject: 'Blood Donation Camp at ' + district + ' on ' + date,
             html: `<p>Hi ${name},</p>
@@ -62,12 +62,12 @@ const requestDonorMail = async (to,data) => {
     let transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-            user: "bloodsharehub@gmail.com",
-            pass: "lgry qxfl qpef ebut",
+            user: " ",
+            pass: " ",
         },
       });
     let mailOptions = {
-        from: "bloodsharehub@gmail.com",
+        from: " ",
         to: to,
         subject: "Emergency Alert",
         html: `<p>Dear Donor,</p>
